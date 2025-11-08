@@ -1,58 +1,111 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Arv - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">Arv</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Hi, I'm Arv</h1>
-        <p>Developer | Designer | Problem Solver</p>
-        <a href="#contact" class="cta-button">Get In Touch</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/250" alt="Profile Picture">
-                </div>
-                <div class="about-text">
-                    <p>Hello! I'm a passionate developer who loves creating innovative solutions and bringing ideas to life through code.</p>
-                    <p>With expertise in web development and a keen eye for design, I build modern, responsive, and user-friendly applications that make a difference.</p>
-                    <p>I'm always eager to learn new technologies and take on challenging projects that push my boundaries.</p>
-                </div>
+    <header class="hero" id="top">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-kicker">Portfolio of</span>
+            <h1 class="hero-title">Arv</h1>
+            <p class="hero-subtitle">Indie Developer &amp; AI Enthusiast</p>
+            <p class="hero-summary">I build immersive web experiences, intuitive products, and data-driven tools that blend creativity with code. Scroll to explore my craft.</p>
+            <div class="hero-actions">
+                <a class="button primary" href="#projects">View Projects</a>
+                <a class="button ghost" href="#contact">Let&rsquo;s Talk</a>
             </div>
         </div>
-    </section>
+        <nav class="hero-nav">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
+    <main>
+        <section id="about" class="panel about-panel">
+            <div class="panel-header">
+                <h2>Who Am I?</h2>
+                <span class="panel-accent">Blending creativity and code</span>
+            </div>
+            <div class="panel-body">
+                <p>I'm a passionate developer who thrives on turning ambitious ideas into polished, interactive realities. From training neural networks to crafting immersive interfaces, I approach every challenge with curiosity and craftsmanship.</p>
+                <ul class="about-highlights">
+                    <li><strong>AI &amp; Machine Learning:</strong> Building intelligent systems that predict, classify, and generate.</li>
+                    <li><strong>Game Development:</strong> Designing engaging experiences with unique mechanics and playful storytelling.</li>
+                    <li><strong>Data Visualization:</strong> Translating complex datasets into intuitive, actionable narratives.</li>
+                    <li><strong>Full-Stack Products:</strong> Delivering seamless experiences from backend architecture to pixel-perfect UI.</li>
+                </ul>
+                <p>I believe in learning by doing, experimenting boldly, and sharing what I discover. My work is driven by curiosity, collaboration, and the desire to make something memorable.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="panel">
+            <div class="panel-header">
+                <h2>What I Build</h2>
+                <span class="panel-accent">Selected projects &amp; experiments</span>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="project-icon">🌐</span>
+                        <span class="project-tagline">Web Experience</span>
+                    </div>
+                    <h3><a href="https://arv2023.github.io/OSIP/" target="_blank" rel="noopener">Website Development</a></h3>
+                    <p>A collaborative site promoting locally produced passion fruit syrup from Malino, South Sulawesi. Blends storytelling, product highlights, and social proof to help local makers reach a global audience.</p>
+                    <ul class="project-tags">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </article>
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="project-icon">📱</span>
+                        <span class="project-tagline">Full-Stack</span>
+                    </div>
+                    <h3>Web Application</h3>
+                    <p>A modern, full-stack application with real-time data, clean UI, and responsive workflows designed to scale alongside growing teams.</p>
+                    <ul class="project-tags">
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </article>
+                <article class="project-card">
+                    <div class="project-meta">
+                        <span class="project-icon">�</span>
+                        <span class="project-tagline">Design Systems</span>
+                    </div>
+                    <h3>Design System</h3>
+                    <p>A reusable design system that aligns teams around consistent components, documentation, and interaction patterns across multiple products.</p>
+                    <ul class="project-tags">
+                        <li>Figma</li>
+                        <li>CSS</li>
+                        <li>Documentation</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="panel">
+            <div class="panel-header">
+                <h2>Skills &amp; Tools</h2>
+                <span class="panel-accent">Stack of choice</span>
+            </div>
             <div class="skills-grid">
                 <div class="skill-card">
                     <h3>Frontend</h3>
                     <ul>
-                        <li>HTML5 & CSS3</li>
+                        <li>HTML5 &amp; CSS3</li>
                         <li>JavaScript (ES6+)</li>
                         <li>React / Vue.js</li>
                         <li>Responsive Design</li>
@@ -61,98 +114,51 @@
                 <div class="skill-card">
                     <h3>Backend</h3>
                     <ul>
-                        <li>Node.js</li>
+                        <li>Node.js &amp; Express</li>
                         <li>Python</li>
                         <li>REST APIs</li>
                         <li>Database Design</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Tools & Others</h3>
+                    <h3>Workflow</h3>
                     <ul>
-                        <li>Git & GitHub</li>
+                        <li>Git &amp; GitHub</li>
                         <li>VS Code</li>
-                        <li>Figma</li>
-                        <li>Agile/Scrum</li>
+                        <li>Figma &amp; Prototyping</li>
+                        <li>Agile / Scrum</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">🌐</div>
-                    <div class="project-content">
-                        <h3><a href="https://arv2023.github.io/OSIP/">Website Developement</a></h3>
-                        <p>A collaborative web project promoting locally produced passion fruit syrup from Malino, South Sulawesi. The site highlights the brand’s story, showcases its signature products, and integrates social media links and customer testimonials to strengthen online visibility. Designed with a clean, modern layout, it reflects the blend of tradition and innovation by connecting local producers with a wider digital audience.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                    </div>
+        <section id="contact" class="panel contact-panel">
+            <div class="panel-header">
+                <h2>Let&rsquo;s Collaborate</h2>
+                <span class="panel-accent">Open to new opportunities</span>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <span class="contact-icon">📧</span>
+                    <h3>Email</h3>
+                    <a href="mailto:your@email.com">your@email.com</a>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">📱</div>
-                    <div class="project-content">
-                        <h3>Web Application</h3>
-                        <p>A full-stack web application with modern features and clean UI.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                    </div>
+                <div class="contact-card">
+                    <span class="contact-icon">💼</span>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">🎨</div>
-                    <div class="project-content">
-                        <h3>Design System</h3>
-                        <p>A comprehensive design system for consistent UI components.</p>
-                        <div class="project-tags">
-                            <span class="tag">Figma</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">Documentation</span>
-                        </div>
-                    </div>
+                <div class="contact-card">
+                    <span class="contact-icon">🐙</span>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/Arv2023" target="_blank" rel="noopener">github.com/Arv2023</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-content">
-                <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <a href="mailto:your@email.com">your@email.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>💼</span>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>🐙</span>
-                        <a href="https://github.com/Arv2023" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Arv. All rights reserved.</p>
-        <p>Built with ❤️ and code</p>
+        <p>&copy; 2025 Arv. Crafted with curiosity and code.</p>
     </footer>
 </body>
-</html>
+</html> -->
