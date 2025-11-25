@@ -1,47 +1,61 @@
 const About = () => {
   const highlights = [
     {
-      title: "AI & Machine Learning:",
+      icon: "🧠",
+      title: "AI & Machine Learning",
       description: "Building intelligent systems that predict, classify, and generate."
     },
     {
-      title: "Data Visualization:",
+      icon: "📊",
+      title: "Data Visualization",
       description: "Translating complex datasets into intuitive, actionable narratives."
     },
     {
-      title: "Full-Stack Products:",
+      icon: "⚡",
+      title: "Full-Stack Products",
       description: "Delivering seamless experiences from backend architecture to pixel-perfect UI."
     }
   ]
 
   return (
-    <section id="about" className="animate-fade-in-up bg-[rgba(10,14,32,0.82)] border border-slate-400/15 rounded-[28px] p-[clamp(3rem,6vw,4.5rem)] backdrop-blur-[14px] shadow-[0_45px_80px_rgba(15,23,42,0.35)]">
-      <div className="flex flex-col gap-3 mb-10">
-        <h2 className="font-playfair text-[clamp(2.8rem,6vw,3.8rem)] font-bold tracking-wide">
+    <section id="about" className="animate-section">
+      {/* Section Header */}
+      <div className="text-center mb-16">
+        <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-widest uppercase text-purple-300 bg-purple-500/10 border border-purple-500/20 mb-4">
+          About Me
+        </span>
+        <h2 className="font-playfair text-4xl md:text-5xl font-bold gradient-text mb-4">
           Who Am I?
         </h2>
-        <span className="text-[0.95rem] uppercase tracking-[0.4em] text-slate-400/60">
-          Blending creativity and code
-        </span>
+        <p className="text-white/50 text-lg max-w-2xl mx-auto">
+          Blending creativity and code to build the future
+        </p>
       </div>
-      
-      <div>
-        <p className="text-[1.05rem] text-slate-200/85 mb-6">
+
+      {/* Main content card */}
+      <div className="glass-card rounded-3xl p-8 md:p-12 mb-8">
+        <p className="text-lg text-white/70 leading-relaxed mb-8">
           I'm a passionate developer who thrives on turning ambitious ideas into polished, interactive realities. From training neural networks to crafting immersive interfaces, I approach every challenge with curiosity and craftsmanship.
         </p>
-        
-        <ul className="list-none grid gap-3.5 my-6 mb-8">
+
+        {/* Highlights Grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
           {highlights.map((item, index) => (
-            <li 
+            <div 
               key={index}
-              className="bg-indigo-500/[0.08] border border-indigo-400/20 rounded-2xl px-5 py-4 text-slate-200/90 text-[1.02rem]"
+              className="group relative p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-indigo-500/5 border border-white/5 transition-all duration-300 hover:border-purple-500/30 hover:bg-purple-500/10"
             >
-              <strong className="text-violet-300 font-semibold">{item.title}</strong> {item.description}
-            </li>
+              <span className="text-3xl mb-4 block">{item.icon}</span>
+              <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
+              <p className="text-sm text-white/60 leading-relaxed">{item.description}</p>
+              
+              {/* Hover glow effect */}
+              <div className="absolute inset-0 rounded-2xl bg-purple-500/20 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-50 -z-10"></div>
+            </div>
           ))}
-        </ul>
-        
-        <p className="text-[1.05rem] text-slate-200/85">
+        </div>
+
+        <p className="text-lg text-white/70 leading-relaxed">
           I believe in learning by doing, experimenting boldly, and sharing what I discover. My work is driven by curiosity, collaboration, and the desire to make something memorable.
         </p>
       </div>

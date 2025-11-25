@@ -1,13 +1,21 @@
-const SkillCard = ({ title, skills }) => {
+const SkillCard = ({ title, skills, icon, gradient }) => {
   return (
-    <div className="bg-gray-900/[0.88] rounded-[22px] p-8 border border-slate-400/[0.18] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.015)] transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-400/45">
-      <h3 className="text-[1.4rem] text-violet-300 mb-5">{title}</h3>
-      <ul className="list-none grid gap-3">
+    <div className={`group relative glass-card rounded-2xl p-6 transition-all duration-300 hover:scale-[1.02] hover:border-purple-500/30`}>
+      {/* Gradient glow on hover */}
+      <div className={`absolute inset-0 rounded-2xl ${gradient} opacity-0 transition-opacity duration-300 group-hover:opacity-100 -z-10 blur-2xl`}></div>
+      
+      <div className="flex items-center gap-3 mb-5">
+        <span className="text-2xl">{icon}</span>
+        <h3 className="text-lg font-semibold text-white">{title}</h3>
+      </div>
+      
+      <ul className="space-y-3">
         {skills.map((skill, index) => (
           <li 
             key={index}
-            className="text-slate-200/80 text-[0.98rem] pl-6 relative before:content-[''] before:absolute before:left-1.5 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-gradient-to-br before:from-purple-500 before:to-indigo-500"
+            className="flex items-center gap-3 text-white/70 text-sm"
           >
+            <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-400 to-indigo-400"></span>
             {skill}
           </li>
         ))}
@@ -19,34 +27,70 @@ const SkillCard = ({ title, skills }) => {
 const Skills = () => {
   const skillCategories = [
     {
+      icon: "🎨",
       title: "Frontend",
-      skills: ["HTML & CSS", "JavaScript", "Responsive Design"]
+      skills: ["HTML & CSS", "JavaScript", "React", "Responsive Design"],
+      gradient: "bg-pink-500/20"
     },
     {
+      icon: "⚙️",
       title: "Backend",
-      skills: ["Node.js", "Python", "REST APIs", "Database Design"]
+      skills: ["Node.js", "Python", "REST APIs", "Database Design"],
+      gradient: "bg-blue-500/20"
     },
     {
+      icon: "🛠️",
       title: "Workflow",
-      skills: ["Git & GitHub", "VS Code", "Agile / Scrum"]
+      skills: ["Git & GitHub", "VS Code", "Agile / Scrum"],
+      gradient: "bg-purple-500/20"
     }
   ]
 
+  // Tech stack with logos
+  const techStack = [
+    { name: "JavaScript", color: "from-yellow-400 to-yellow-600" },
+    { name: "Python", color: "from-blue-400 to-blue-600" },
+    { name: "React", color: "from-cyan-400 to-cyan-600" },
+    { name: "Node.js", color: "from-green-400 to-green-600" },
+    { name: "MySQL", color: "from-orange-400 to-orange-600" },
+    { name: "Git", color: "from-red-400 to-red-600" },
+  ]
+
   return (
-    <section id="skills" className="animate-fade-in-up bg-[rgba(10,14,32,0.82)] border border-slate-400/15 rounded-[28px] p-[clamp(3rem,6vw,4.5rem)] backdrop-blur-[14px] shadow-[0_45px_80px_rgba(15,23,42,0.35)]">
-      <div className="flex flex-col gap-3 mb-10">
-        <h2 className="font-playfair text-[clamp(2.8rem,6vw,3.8rem)] font-bold tracking-wide">
+    <section id="skills" className="animate-section">
+      {/* Section Header */}
+      <div className="text-center mb-16">
+        <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-widest uppercase text-purple-300 bg-purple-500/10 border border-purple-500/20 mb-4">
+          Expertise
+        </span>
+        <h2 className="font-playfair text-4xl md:text-5xl font-bold gradient-text mb-4">
           Skills & Tools
         </h2>
-        <span className="text-[0.95rem] uppercase tracking-[0.4em] text-slate-400/60">
-          Stack of choice
-        </span>
+        <p className="text-white/50 text-lg max-w-2xl mx-auto">
+          Technologies I work with
+        </p>
       </div>
-      
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-7">
+
+      {/* Skills Grid */}
+      <div className="grid md:grid-cols-3 gap-6 mb-12">
         {skillCategories.map((category, index) => (
           <SkillCard key={index} {...category} />
         ))}
+      </div>
+
+      {/* Tech Stack Marquee */}
+      <div className="glass-card rounded-2xl p-6 overflow-hidden">
+        <p className="text-center text-sm text-white/40 mb-4 tracking-widest uppercase">Tech Stack</p>
+        <div className="flex justify-center gap-4 flex-wrap">
+          {techStack.map((tech, index) => (
+            <div 
+              key={index}
+              className={`px-4 py-2 rounded-full bg-gradient-to-r ${tech.color} bg-opacity-10 border border-white/10 text-white/90 text-sm font-medium transition-all duration-300 hover:scale-110 hover:border-white/30`}
+            >
+              {tech.name}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

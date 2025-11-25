@@ -1,18 +1,38 @@
-const ProjectCard = ({ icon, tagline, title, link, description, tags }) => {
+const ProjectCard = ({ icon, tagline, title, link, description, tags, index }) => {
   return (
-    <article className="bg-slate-900/85 rounded-3xl p-9 border border-indigo-500/15 transition-all duration-[350ms] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.02)] hover:-translate-y-2 hover:border-violet-300/55 hover:shadow-[0_25px_60px_rgba(76,29,149,0.35)]">
-      <div className="flex items-center gap-3 text-indigo-300/80 uppercase tracking-[0.3em] text-xs mb-5">
-        {icon && <span className="text-2xl">{icon}</span>}
-        <span>{tagline}</span>
+    <article className={`group relative glass-card rounded-3xl p-8 transition-all duration-500 hover:border-purple-500/30 animate-section stagger-${index + 1}`}>
+      {/* Gradient border on hover */}
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/20 via-violet-500/20 to-indigo-500/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100 -z-10 blur-xl"></div>
+      
+      {/* Header */}
+      <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl">{icon}</span>
+          <span className="text-xs font-medium tracking-widest uppercase text-purple-300/80 bg-purple-500/10 px-3 py-1 rounded-full">
+            {tagline}
+          </span>
+        </div>
+        {link && (
+          <a 
+            href={link} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-white/5 text-white/50 transition-all duration-300 hover:bg-purple-500/20 hover:text-purple-300"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        )}
       </div>
       
-      <h3 className="text-[1.65rem] text-slate-50 mb-4 font-semibold">
+      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-200 transition-colors">
         {link ? (
           <a 
             href={link} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-inherit no-underline border-b border-transparent pb-0.5 transition-colors duration-300 hover:border-violet-300/70"
+            className="text-inherit no-underline"
           >
             {title}
           </a>
@@ -21,20 +41,21 @@ const ProjectCard = ({ icon, tagline, title, link, description, tags }) => {
         )}
       </h3>
       
-      <p className="text-slate-200/80 mb-6 text-[1.02rem] leading-7">
+      <p className="text-white/60 mb-6 leading-relaxed">
         {description}
       </p>
       
-      <ul className="flex gap-3 flex-wrap">
-        {tags.map((tag, index) => (
-          <li 
-            key={index}
-            className="list-none bg-indigo-500/[0.18] border border-indigo-400/35 text-indigo-100/85 px-4 py-1.5 rounded-full text-[0.85rem] tracking-wide"
+      {/* Tags */}
+      <div className="flex gap-2 flex-wrap">
+        {tags.map((tag, idx) => (
+          <span 
+            key={idx}
+            className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/5 text-white/70 border border-white/10 transition-all duration-300 hover:bg-purple-500/10 hover:border-purple-500/30 hover:text-purple-200"
           >
             {tag}
-          </li>
+          </span>
         ))}
-      </ul>
+      </div>
     </article>
   )
 }
@@ -50,7 +71,7 @@ const Projects = () => {
       tags: ["HTML", "CSS", "JavaScript"]
     },
     {
-      icon: "📱",
+      icon: "🎮",
       tagline: "Full-Stack",
       title: "Blackjack & Fitness Game",
       link: "https://github.com/ST0503-BED/bed-ca2-Arv2023",
@@ -59,28 +80,33 @@ const Projects = () => {
     },
     {
       icon: "🤖",
-      tagline: "Chatbot",
+      tagline: "AI / ML",
       title: "AI Chatbot",
       link: null,
-      description: "An AI-powered chatbot built using the OpenAI ChatGPT API. It provides natural language conversation, contextual responses, and content generation. The implementation uses a secure server-side API key to call the ChatGPT endpoints, includes prompt-engineering for improved relevance, and supports integration into web apps for automated support, FAQs, and interactive experiences.",
-      tags: ["Python", "HTML", "Documentation"]
+      description: "An AI-powered chatbot built using the OpenAI ChatGPT API. It provides natural language conversation, contextual responses, and content generation with secure server-side API integration and prompt-engineering for improved relevance.",
+      tags: ["Python", "OpenAI API", "NLP"]
     }
   ]
 
   return (
-    <section id="projects" className="animate-fade-in-up bg-[rgba(10,14,32,0.82)] border border-slate-400/15 rounded-[28px] p-[clamp(3rem,6vw,4.5rem)] backdrop-blur-[14px] shadow-[0_45px_80px_rgba(15,23,42,0.35)]">
-      <div className="flex flex-col gap-3 mb-10">
-        <h2 className="font-playfair text-[clamp(2.8rem,6vw,3.8rem)] font-bold tracking-wide">
+    <section id="projects" className="animate-section">
+      {/* Section Header */}
+      <div className="text-center mb-16">
+        <span className="inline-block px-4 py-1.5 rounded-full text-xs font-medium tracking-widest uppercase text-purple-300 bg-purple-500/10 border border-purple-500/20 mb-4">
+          Portfolio
+        </span>
+        <h2 className="font-playfair text-4xl md:text-5xl font-bold gradient-text mb-4">
           What I Build
         </h2>
-        <span className="text-[0.95rem] uppercase tracking-[0.4em] text-slate-400/60">
+        <p className="text-white/50 text-lg max-w-2xl mx-auto">
           Selected projects & experiments
-        </span>
+        </p>
       </div>
-      
-      <div className="grid gap-7">
+
+      {/* Projects Grid */}
+      <div className="grid gap-6">
         {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <ProjectCard key={index} {...project} index={index} />
         ))}
       </div>
     </section>

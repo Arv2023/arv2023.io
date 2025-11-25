@@ -1,119 +1,71 @@
-# Arv Portfolio
+# Arviind's Portfolio
 
-A modern, responsive portfolio website built with React and Tailwind CSS, featuring a sleek dark theme with smooth animations.
+A modern, responsive portfolio website built with React, Vite, and Tailwind CSS.
 
-## 🚀 Features
+🌐 **Live Site:** [https://arv2023.github.io/arv2023.io](https://arv2023.github.io/arv2023.io)
 
-- **Modern Dark Theme** - Elegant dark design with purple/pink gradient accents
-- **Fully Responsive** - Works perfectly on mobile, tablet, and desktop
-- **Smooth Animations** - Fade-in, slide-up, and hover effects
-- **Component-Based** - Clean, modular React components
-- **Fast Development** - Powered by Vite for lightning-fast HMR
-- **Tailwind CSS** - Utility-first CSS framework for rapid styling
+## ✨ Features
 
-## 📦 Installation
+- **Modern Design** - Glassmorphism effects, animated gradients, and smooth transitions
+- **Fully Responsive** - Looks great on all devices
+- **Fast Performance** - Built with Vite for lightning-fast load times
+- **GitHub Pages Ready** - Automatic deployment via GitHub Actions
 
-1. **Install dependencies:**
-   ```powershell
-   npm install
-   ```
+## 🛠️ Tech Stack
 
-## 🏃 Running the Project
+- **React 18** - UI library
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **GitHub Actions** - CI/CD
 
-Start the development server:
-```powershell
+## 🚀 Getting Started
+
+### Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
 npm run dev
 ```
 
-The site will be available at `http://localhost:5173`
+### Production Build
 
-## 🏗️ Building for Production
-
-Create a production build:
-```powershell
+```bash
+# Build for production
 npm run build
-```
 
-Preview the production build:
-```powershell
+# Preview production build
 npm run preview
 ```
+
+## 📦 Deployment
+
+This project is configured for automatic deployment to GitHub Pages via GitHub Actions.
+
+### To enable GitHub Pages:
+1. Go to your repository Settings
+2. Navigate to Pages
+3. Under "Build and deployment", select "GitHub Actions" as the source
+4. Push to the `main` branch to trigger deployment
 
 ## 📁 Project Structure
 
 ```
-arv2023.io/
-├── src/
-│   ├── components/
-│   │   ├── Navigation.jsx    # Top navigation bar
-│   │   ├── Hero.jsx          # Hero/landing section
-│   │   ├── About.jsx         # About me section
-│   │   ├── Skills.jsx        # Skills showcase
-│   │   ├── Projects.jsx      # Project portfolio
-│   │   ├── Contact.jsx       # Contact information
-│   │   └── Footer.jsx        # Footer component
-│   ├── App.jsx               # Main app component
-│   ├── main.jsx              # React entry point
-│   └── index.css             # Global styles with Tailwind
-├── index.html                # HTML template
-├── package.json              # Dependencies and scripts
-├── vite.config.js            # Vite configuration
-├── tailwind.config.js        # Tailwind configuration
-└── postcss.config.js         # PostCSS configuration
+src/
+├── components/
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Projects.jsx
+│   ├── Skills.jsx
+│   ├── Contact.jsx
+│   └── Footer.jsx
+├── App.jsx
+├── main.jsx
+└── index.css
 ```
 
-## 🎨 Customization
+## 📄 License
 
-### Update Your Information
-
-1. **About Section** (`src/components/About.jsx`):
-   - Replace the placeholder image URL
-   - Update your bio text
-
-2. **Contact Section** (`src/components/Contact.jsx`):
-   - Update email address
-   - Add your LinkedIn profile URL
-   - Verify GitHub link
-
-3. **Skills Section** (`src/components/Skills.jsx`):
-   - Modify the skills arrays to match your expertise
-
-4. **Projects Section** (`src/components/Projects.jsx`):
-   - Add your actual projects
-   - Update descriptions and tags
-
-### Color Scheme
-
-The theme uses purple/pink gradients. To customize colors, edit `tailwind.config.js`:
-
-```js
-theme: {
-  extend: {
-    colors: {
-      primary: {
-        // Your custom colors here
-      }
-    }
-  }
-}
-```
-
-## 🛠️ Technologies Used
-
-- **React 18** - UI library
-- **Vite** - Build tool and dev server
-- **Tailwind CSS 3** - Utility-first CSS framework
-- **PostCSS** - CSS transformations
-- **Autoprefixer** - CSS vendor prefixing
-
-## 📝 License
-
-© 2025 Arv. All rights reserved.
-
-## 🤝 Contributing
-
-Feel free to fork this project and customize it for your own portfolio!
-
----
-
-Built with ❤️ and code
+© 2025 Arviind. All rights reserved.
