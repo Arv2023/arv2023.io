@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with React, Vite, and Tailwind CSS.
 
-🌐 **Live Site:** [https://arv2023.github.io/arv2023.io](https://arv2023.github.io/arv2023.io)
+🌐 **Live Site:** [https://arv2023.github.io/](https://arv2023.github.io/)
 
 ## ✨ Features
 
