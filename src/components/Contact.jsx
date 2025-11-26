@@ -21,21 +21,21 @@ const ContactCard = ({ icon, title, link, linkText, color }) => {
 const Contact = () => {
   const contacts = [
     {
-      icon: "📧",
+      // icon: "📧",
       title: "Email",
       link: "mailto:arviind115@email.com",
       linkText: "arviind115a@email.com",
       color: "bg-red-500/20"
     },
     {
-      icon: "💼",
+      //icon: "💼",
       title: "LinkedIn",
       link: "https://www.linkedin.com/in/arviindshankar",
       linkText: "linkedin.com/in/arviindshankar",
       color: "bg-blue-500/20"
     },
     {
-      icon: "🐙",
+      // icon: "🐙",
       title: "GitHub",
       link: "https://github.com/Arv2023",
       linkText: "github.com/Arv2023",
